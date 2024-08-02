@@ -9,9 +9,9 @@ import os
 load_dotenv()
 
 def generate():
-    vertexai.init(project=os.getenv("GCP_PROJECT_ID"), location=os.("LOCATION"))
+    vertexai.init(project=os.getenv("GC_PROJECT_ID"), location=os.getenv("LOCATION"))
     model = GenerativeModel(
-        "gemini-1.5-pro-001",
+        os.getenv("MODEL"),
     )
     responses = model.generate_content(
         [text1],
