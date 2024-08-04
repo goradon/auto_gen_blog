@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 import os
+import vertexai.preview.generative_models as generative_models
 
 load_dotenv()
 
