@@ -28,19 +28,19 @@ def create_notion_page(blog_title, blog_content):
                 }
             }
         },
-        "children": [
+        'children': [
             {
-                "object": 'block',
-                "type": 'quote',
-                "quote": {
-                    "rich_text": [
+                'object': 'block',
+                'type': 'paragraph',
+                'paragraph': {
+                    'rich_text': [
                         {
-                            "text": {
-                                "content": blog_content
+                            'text': {
+                                'content': blog_content
                             }
                         }
                     ],
-                }
+                },
             },
         ],
     }

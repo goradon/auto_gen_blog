@@ -2,7 +2,7 @@ import base64
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part, FinishReason
 import vertexai.preview.generative_models as generative_models
-from config import text1, generation_config, safety_settings
+from config import prompt, generation_config, safety_settings
 from dotenv import load_dotenv
 import os
 
@@ -14,7 +14,7 @@ def generate():
         os.getenv("MODEL"),
     )
     responses = model.generate_content(
-        [text1],
+        [prompt],
         generation_config=generation_config,
         safety_settings=safety_settings,
         stream=False,
