@@ -7,11 +7,23 @@ import vertexai.preview.generative_models as generative_models
 import re
 
 
+def main():
+    BLOG = generate().text
+    match = re.search(r"【(.*?)】", BLOG)
+    if match:
+        BLOG_TITLE = match.group(1)
+    BLOG_CONTENT = BLOG[len(BLOG_TITLE)+7:]
+    create_notion_page(BLOG_TITLE, BLOG_CONTENT)
 
-BLOG = generate().text
-match = re.search(r"【(.*?)】", BLOG)
-if match:
-    BLOG_TITLE = match.group(1)
-BLOG_CONTENT = BLOG[len(BLOG_TITLE)+6:]
-create_notion_page(BLOG_TITLE, BLOG_CONTENT)
-print(len(BLOG[len(BLOG_TITLE):])-2)
+    # 確認用
+    print("-"*10)
+    print(len(BLOG[len(BLOG_TITLE):])-2)
+    print("-"*10)
+    print(BLOG_TITLE)
+    print("-"*10)
+    print(STATUS)
+    print("-"*10)
+    print(BLOG_CONTENT)
+
+if __name__ == "__main__":
+    main() 

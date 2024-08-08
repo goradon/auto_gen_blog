@@ -12,9 +12,9 @@ DATABASE_ID = os.getenv('DATABASE_ID')
 STATUS = os.getenv('STATUS')
 
 # affect Model
-text1 = os.getenv('TEXT')
+prompt = os.getenv('PROMPT')
 generation_config = {
-    "max_output_tokens": 30, #TODO:change after test
+    "max_output_tokens": 1024,
     "temperature": 1,
     "top_p": 1,
 }
